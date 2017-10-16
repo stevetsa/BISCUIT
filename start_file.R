@@ -4,6 +4,13 @@
 ## 
 ## Code author SP
 
+###
+
+rm(list=ls()); graphics.off()
+working_path <- "/opt/BISCUIT_SingleCell_IMM_ICML_2016"; setwd(working_path);
+
+###
+
 
 ###
 ###
