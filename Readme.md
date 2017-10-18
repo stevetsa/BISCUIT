@@ -94,9 +94,9 @@ ______
 3. Type a title and description for your issue, new feature you wish to see added etc.
 4. When you are finished, click Submit new issue.
 
-**Docker Image**
-______
 
+**Docker Image**
+---------------------
 A Docker image is available for this project.  For a detailed description about Docker, please refer to this [overview.](https://www.docker.com/what-docker)
 
 This Docker image has been tested on AWS x1.16xlarge and r4.16xlarge [instances](https://aws.amazon.com/ec2/instance-types/).  
