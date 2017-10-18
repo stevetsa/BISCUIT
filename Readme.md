@@ -103,7 +103,7 @@ On a MacPro with 21 CPUs and 60GB RAM assigned to the container, it toook about 
 
 Follow [instructions](https://www.docker.com/docker-mac) to install Docker for your environment.
 
-***Run BISCUIT Docker image on the [example data](https://github.com/sandhya212/BISCUIT_SingleCell_IMM_ICML_2016)***
+***Run BISCUIT Docker image on the example above***
 
 ```
 docker pull stevetsa/biscuit:latest
