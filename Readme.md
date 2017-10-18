@@ -95,14 +95,16 @@ ______
 4. When you are finished, click Submit new issue.
 
 **Docker Image**
+
 A Docker container is available for this project.  For a detailed description of docker, please refer to this [overview.](https://www.docker.com/what-docker)
 
-****This Docker image has been tested on AWS x1.16xlarge and r4.16xlarge [instances](https://aws.amazon.com/ec2/instance-types/).  
+***This Docker image has been tested on AWS x1.16xlarge and r4.16xlarge [instances](https://aws.amazon.com/ec2/instance-types/).  
 On a MacPro with 21 CPUs and 60GB RAM assigned to the container, it toook about 40 min to analyze 3K cells and 150 genes.
 
 Follow [instructions](https://www.docker.com/docker-mac) to install Docker for your environment.
 
-***Run BISCUIT Docker image on the [example data](https://github.com/sandhya212/BISCUIT_SingleCell_IMM_ICML_2016)
+***Run BISCUIT Docker image on the [example data](https://github.com/sandhya212/BISCUIT_SingleCell_IMM_ICML_2016)***
+
 ```
 docker pull stevetsa/biscuit:latest
 docker run -it stevetsa/biscuit:latest
