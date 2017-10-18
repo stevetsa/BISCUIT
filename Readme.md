@@ -94,7 +94,7 @@ ______
 3. Type a title and description for your issue, new feature you wish to see added etc.
 4. When you are finished, click Submit new issue.
 
-**Docker Image**
+##Docker Image##
 
 A Docker container is available for this project.  For a detailed description of docker, please refer to this [overview.](https://www.docker.com/what-docker)
 
@@ -102,11 +102,11 @@ A Docker container is available for this project.  For a detailed description of
 On a MacPro with 21 CPUs and 60GB RAM assigned to the container, it toook about 40 min to analyze 3K cells and 150 genes.
 
 
-***Install Docker***
+###Install Docker###
 
 Follow [instructions](https://www.docker.com/docker-mac) to install Docker for your environment.
 
-***Run BISCUIT Docker image on the example above***
+###Run BISCUIT Docker image on the example above###
 
 ```
 docker pull stevetsa/biscuit:latest
