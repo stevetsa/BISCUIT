@@ -32,4 +32,4 @@ WORKDIR $SRC/BISCUIT_SingleCell_IMM_ICML_2016/
 RUN wget https://storage.googleapis.com/linnarsson-lab-www-blobs/blobs/cortex/expression_mRNA_17-Aug-2014.txt
 
 # set the command
-CMD ["R"]
+#CMD ["R"]
