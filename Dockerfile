@@ -1,35 +1,33 @@
-#####
-#  BISCUIT (Bayesian Inference for Single-cell ClUstering and ImpuTing)
-#  http://proceedings.mlr.press/v48/prabhakaran16.pdf
-#  https://github.com/sandhya212/BISCUIT_SingleCell_IMM_ICML_2016
-#####
+FROM r-base:3.5.1
+#FROM rocker/r-devel:latest
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+   libfftw3-dev \
+   gcc \
+   git-all \
+   file \
+   libapparmor1 \
+   libcurl4-openssl-dev \
+   libedit2 \
+   libssl-dev \
+   lsb-release \
+   psmisc \
+   procps \
+   libxml2-dev \
+   pkg-config \
+   libcairo2-dev \
+   libmagick++-dev \
+   postgresql postgresql-contrib libpq-dev libudunits2-dev libx11-dev mesa-common-dev libglu1-mesa-dev libhdf5-dev gfortran && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
-FROM ubuntu:latest
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-MAINTAINER Steve Tsang <mylagimail2004@yahoo.com>
-RUN apt-get clean && apt-get update
-
-RUN apt-get install --yes \
- build-essential \
- git \
- wget \
- nano \
- r-base
-
-# Get latest source from releases
-ENV SRC /opt
-ENV BIN /usr/local/bin
-
-RUN echo 'install.packages(c("MCMCpack","mvtnorm","ellipse","coda","Matrix","Rtsne","gtools","foreach","doParallel","doSNOW","snow","lattice","MASS","bayesm","robustbase","chron","mnormt","schoolmath","devtools","RColorBrewer"), repos="http://cran.us.r-project.org", dependencies=TRUE)' > /tmp/packages.R \
-    && Rscript /tmp/packages.R
-
-WORKDIR $SRC
+COPY install.packages.R /opt/.
+RUN Rscript /opt/install.packages.R
+WORKDIR /opt
 RUN git clone https://github.com/stevetsa/BISCUIT_SingleCell_IMM_ICML_2016
 COPY Dockerfile /opt/Dockerfile
 
 ## Add Example 
-WORKDIR $SRC/BISCUIT_SingleCell_IMM_ICML_2016/
+WORKDIR /opt/BISCUIT_SingleCell_IMM_ICML_2016/
 RUN wget https://storage.googleapis.com/linnarsson-lab-www-blobs/blobs/cortex/expression_mRNA_17-Aug-2014.txt
 
-# set the command
-#CMD ["R"]
+ENV PATH="$PATH:/opt"
